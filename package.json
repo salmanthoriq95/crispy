@@ -1,18 +1,35 @@
 {
-	"name": "crispy",
-	"version": "1.0.0-beta1",
-	"description": "This is token genrator using cypto-js",
-	"main": "index.js",
-	"scripts": {
-		"start:dev:win": "nodemon index",
-		"test": "jest"
-	},
-	"keywords": [
-		"encrypt",
-		"token-generator",
-		"token"
-	],
-	"author": "Salman Thoriq Al Farisyi",
-	"license": "ISC"
+  "name": "crispy",
+  "version": "1.0.0-beta1",
+  "description": "This is token genrator using cypto-js",
+  "main": "index.js",
+  "scripts": {
+    "start:dev:win": "nodemon index",
+    "test": "jest"
+  },
+  "keywords": [
+    "encrypt",
+    "token-generator",
+    "token"
+  ],
+  "author": "Salman Thoriq Al Farisyi",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salmanthoriq95/crispy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/salmanthoriq95/crispy/issues"
+  },
+  "homepage": "https://github.com/salmanthoriq95/crispy#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.3",
+    "clean-jsdoc-theme": "^4.0.7",
+    "eslint": "^8.18.0",
+    "jest": "^28.1.1",
+    "jsdoc": "^3.6.10"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1"
+  }
 }
-
