@@ -8,7 +8,7 @@ const algorithm = "aes-256-cbc";
 // Import Crypto-Js from npm
 const CryptoJs = require("crypto-js");
 const AES = require("crypto-js/aes");
-
+let optionalConfig;
 // import redis
 // const Redis = require("../db.Interface/redis/queries/redis.queries");
 // const redis = new Redis();
@@ -67,7 +67,6 @@ const decryptCryptoNative = (text) => {
 /**
  * encrypt message using crpto-js npm
  * @param {*} rawData
- * @param {object} [options]
  * @returns {{data: string, key:string}}
  */
 const encryptCryptoJs = (rawData, options) => {
@@ -116,17 +115,16 @@ const decrptCryptoJs = (encrypedData, key) => {
 /**
  * create new token
  * @param {string|number|Array<any>|object} plainText
- * @param {object} [options]
  * @returns {{data: string, key: string}}
  */
-const encrypt = (plainText, options) => {
+const encrypt = (plainText) => {
 	// first encrypt using native nodeJs
 	const firstEncryption = encryptCryptoNative(JSON.stringify(plainText));
 
 	// second encryption use crypto-js
 	const encryptedData = encryptCryptoJs(
 		JSON.stringify(firstEncryption),
-		options
+		optionalConfig
 	);
 
 	return encryptedData;
@@ -157,6 +155,7 @@ const decrypt = (token, key) => {
  * @returns {*}
  */
 const main = (options) => {
+	optionalConfig = options;
 	return {
 		encrypt: () => {},
 		decrypt: () => {},
